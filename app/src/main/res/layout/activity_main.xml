@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sup3rd3v3l0p3r.teamvetor.namegenerator.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="여기에 닉네임이 표시됩니다."
+            android:textColor="#606060"
+            android:textSize="28dp"
+            android:id="@+id/showName"
+            android:textStyle="bold" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="닉네임 생성!!"
+            android:textSize="30dp"
+            android:layout_gravity="center"
+            android:onClick="generateButton"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>
