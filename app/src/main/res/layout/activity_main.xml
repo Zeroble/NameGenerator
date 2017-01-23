@@ -21,13 +21,40 @@
             android:textSize="28dp"
             android:id="@+id/showName"
             android:textStyle="bold" />
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="닉네임 생성!!"
-            android:textSize="30dp"
-            android:layout_gravity="center"
-            android:onClick="generateButton"
-            android:textStyle="bold" />
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="복사"
+                android:textSize="30dp"
+                android:layout_gravity="center"
+                android:onClick="copyButton"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="닉네임 생성!!"
+                android:textSize="30dp"
+                android:layout_gravity="center"
+                android:onClick="generateButton"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>
