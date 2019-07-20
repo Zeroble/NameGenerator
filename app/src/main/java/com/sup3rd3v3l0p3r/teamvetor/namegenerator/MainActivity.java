@@ -4,8 +4,10 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,10 +19,69 @@ public class MainActivity extends AppCompatActivity {
     String four = "";
     int choose;
 
+    SwitchCompat randomSwitch;
+    SwitchCompat twoSwitch;
+    SwitchCompat threeSwitch;
+    SwitchCompat fourSwitch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        randomSwitch = (SwitchCompat) findViewById(R.id.switch_random);
+        twoSwitch = (SwitchCompat) findViewById(R.id.switch_two);
+        threeSwitch = (SwitchCompat) findViewById(R.id.switch_three);
+        fourSwitch = (SwitchCompat) findViewById(R.id.switch_four);
+        randomSwitch.setChecked(true);
+
+        randomSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Log.i("TAG","ASDFASDF???!?!?!? "+randomSwitch.isChecked());
+                    if(isChecked == true){
+                    twoSwitch.setChecked(false);
+                    threeSwitch.setChecked(false);
+                    fourSwitch.setChecked(false);
+                }
+                if(isChecked == false&&twoSwitch.isChecked() == false&&threeSwitch.isChecked() == false&&fourSwitch.isChecked()==false)
+                    twoSwitch.setChecked(true);
+            }
+        });
+        twoSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if((isChecked == false&&twoSwitch.isChecked() == false&&threeSwitch.isChecked()==false&&randomSwitch.isChecked()==false)||(twoSwitch.isChecked()==true&&threeSwitch.isChecked()==true&&fourSwitch.isChecked()==true))
+                    randomSwitch.setChecked(true);
+                if(twoSwitch.isChecked()==true||threeSwitch.isChecked()==true||fourSwitch.isChecked()==true)
+                    randomSwitch.setChecked(false);
+                Log.i("TAG","IN TWO : "+randomSwitch.isChecked());
+
+            }
+        });
+        threeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if((isChecked == false&&twoSwitch.isChecked() == false&&threeSwitch.isChecked()==false&&randomSwitch.isChecked()==false)||(twoSwitch.isChecked()==true&&threeSwitch.isChecked()==true&&fourSwitch.isChecked()==true))
+                    randomSwitch.setChecked(true);
+                if(twoSwitch.isChecked()==true||threeSwitch.isChecked()==true||fourSwitch.isChecked()==true)
+                    randomSwitch.setChecked(false);
+                Log.i("TAG","IN THREE : "+randomSwitch.isChecked());
+
+            }
+        });
+        fourSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if((isChecked == false&&twoSwitch.isChecked() == false&&threeSwitch.isChecked()==false&&randomSwitch.isChecked()==false)||(twoSwitch.isChecked()==true&&threeSwitch.isChecked()==true&&fourSwitch.isChecked()==true))
+                    randomSwitch.setChecked(true);
+                if(twoSwitch.isChecked()==true||threeSwitch.isChecked()==true||fourSwitch.isChecked()==true)
+                    randomSwitch.setChecked(false);
+                Log.i("TAG","IN FOUR : "+randomSwitch.isChecked());
+
+            }
+        });
+
     }
 
     public void copyButton(View v) {
@@ -140,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if (choose == 2 || choose == 3 || choose == 6 || choose == 7) { //-된
-            num = ((int) (Math.random() * 30));
+            num = ((int) (Math.random() * 31));
             num++;
             switch (num) {
                 case 1:
@@ -233,10 +294,13 @@ public class MainActivity extends AppCompatActivity {
                 case 30:
                     two = "이상한 ";
                     break;
+                case 31:
+                    two = "유일무이한 ";
+                    break;
             }
         }
         if (choose == 1 || choose == 3 || choose == 5 || choose == 7) { //-의
-            num = ((int) (Math.random() * 30));
+            num = ((int) (Math.random() * 31));
             num++;
             switch (num) {
                 case 1:
@@ -329,10 +393,13 @@ public class MainActivity extends AppCompatActivity {
                 case 30:
                     three = "마왕의 ";
                     break;
+                case 31:
+                    three = "이세계의";
+                    break;
             }
         }
         //주어
-        num = ((int) (Math.random() * 29));
+        num = ((int) (Math.random() * 30));
         num++;
         switch (num) {
             case 1:
@@ -420,6 +487,9 @@ public class MainActivity extends AppCompatActivity {
                 four = "고양이";
                 break;
             case 29:
+                four = "암살자";
+                break;
+            case 30:
                 four = "암살자";
                 break;
         }
