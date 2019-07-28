@@ -25,102 +25,140 @@
                 android:weightSum="10">
 
                 <TextView
-                    android:id="@+id/showName"
+                    android:id="@+id/showNameOne"
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
+                    android:layout_height="150dp"
                     android:layout_gravity="center"
                     android:layout_weight="9"
                     android:gravity="center"
                     android:text="여기에 닉네임이 표시됩니다."
                     android:textColor="#606060"
-                    android:textSize="28sp" />
+                    android:textSize="28dp" />
+                <TextView
+                    android:id="@+id/showNameTwo"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:layout_weight="9"
+                    android:gravity="center"
+                    android:text="여기에 닉네임이 표시됩니다."
+                    android:textColor="#606060"
+                    android:textSize="16dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/swOne"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:onClick="swBtn">
+                android:orientation="horizontal">
 
-                <TextView
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="2 단어"
-                    android:textSize="20sp" />
+                    android:gravity="center">
 
-                <Switch
-                    android:id="@+id/swone"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:checked="true"
-                    android:layout_gravity="center"
-                    android:scaleX="1.5"
-                    android:scaleY="1.5" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 단어"
+                        android:textSize="20sp" />
 
-            </LinearLayout>
+                    <Switch
+                        android:id="@+id/swone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:checked="true" />
 
-            <LinearLayout
-                android:id="@+id/swTwo"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:onClick="swBtn">
-
-                <TextView
+                </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="3 단어"
-                    android:textSize="20sp" />
+                    android:gravity="center">
 
-                <Switch
-                    android:id="@+id/swtwo"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:checked="true"
-                    android:scaleX="1.5"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3 단어"
+                        android:textSize="20sp" />
 
-                    android:scaleY="1.5" />
+                    <Switch
+                        android:id="@+id/swtwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:checked="true" />
 
-            </LinearLayout>
+                </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/swThree"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:onClick="swBtn">
-
-                <TextView
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="4 단어"
-                    android:textSize="20sp" />
+                    android:gravity="center">
 
-                <Switch
-                    android:id="@+id/swthree"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:checked="true"
-                    android:scaleX="1.5"
-                    android:scaleY="1.5" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4 단어"
+                        android:textSize="20sp" />
 
+                    <Switch
+                        android:id="@+id/swthree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:checked="false" />
+
+                </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="20sp"
+                    android:text="단어 순서 섞어서 추천받기"
+                    android:gravity="center"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/shake"
+                    />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:onClick="swBtn"
                 android:orientation="horizontal">
 
                 <TextView
@@ -172,13 +210,13 @@
         </LinearLayout>
 
         <com.google.android.gms.ads.AdView
-            android:layout_gravity="bottom"
             android:id="@+id/adView"
-            android:layout_marginBottom="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
             ads:adSize="BANNER"
             ads:adUnitId="@string/banner_ad_unit_id" />
     </FrameLayout>
